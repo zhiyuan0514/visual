@@ -144,7 +144,7 @@ export default {
             barWidth : 10,
             itemStyle: {
               barBorderRadius: [3, 3, 0, 0],
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0, color: 'rgba(0,204,255,1)' // 0% 处的颜色
               }, {
                 offset: 1, color: 'rgba(8,59,126,1)' // 100% 处的颜色
@@ -157,7 +157,7 @@ export default {
             data: [5000000, 20000000, 30000000, 70000000, 50000000, 30000000, 70050000, 80099999, 60066666, 50055555, 90999990, 89999999],
             itemStyle: {
               barBorderRadius: [3, 3, 0, 0],
-              color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                 offset: 0, color: 'rgba(144,20,238,1)' // 0% 处的颜色
               }, {
                 offset: 1, color: 'rgba(74,8,211,1)' // 100% 处的颜色
@@ -166,7 +166,7 @@ export default {
           }
         ]
       };
-      let myChart = this.$echarts.init(document.getElementById(this.id));
+      let myChart = echarts.init(document.getElementById(this.id));
       myChart.clear();
       myChart.resize(
         {

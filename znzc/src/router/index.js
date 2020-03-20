@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import Router from 'vue-router'
 import home from '@/views/home';
-import soldierMood from '@/views/soldierMood/soldierMood';
+// import soldierMood from '@/views/soldierMood/soldierMood';
 
-Vue.use(Router)
+// Vue.use(Router)
 
-export default new Router({
+export default new VueRouter({
   routes: [
     {
       path: '/',
@@ -16,16 +16,16 @@ export default new Router({
       },
       children:[
        
-        {
-          path:'/mobileMaket',
-          name:'mobileMaket',
-          component: () => import('@/views/mobileMaket')
-        },
-        {
-          path:'easternAirline',
-          name:'easternAirline',
-          component: () => import('@/views/easternAirline')
-        },
+      //   {
+      //     path:'/mobileMaket',
+      //     name:'mobileMaket',
+      //     component: () => import('@/views/mobileMaket')
+      //   },
+      //   {
+      //     path:'easternAirline',
+      //     name:'easternAirline',
+      //     component: () => import('@/views/easternAirline')
+      //   },
         {
           path:'zhizhong',
           name:'zhizhong',
@@ -33,17 +33,17 @@ export default new Router({
         }
       ]
     },
-    {
-      path: '/soldierMood',
-      name: 'soldierMood',
-      component: soldierMood,
-      children:[
-        {
-          path:'index',
-          name:'index',
-          component: () => import('@/views/soldierMood/index')
-        }
-      ]
-    }
+    // {
+    //   path: '/soldierMood',
+    //   name: 'soldierMood',
+    //   component: soldierMood,
+    //   children:[
+    //     {
+    //       path:'index',
+    //       name:'index',
+    //       component: () => import('@/views/soldierMood/index')
+    //     }
+    //   ]
+    // }
   ]
 })

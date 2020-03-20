@@ -522,7 +522,7 @@ export default {
           },
         ]
       };
-      let myChart = this.$echarts.init(document.getElementById('chinaMap'));
+      let myChart =echarts.init(document.getElementById('chinaMap'));
 
       myChart.clear();
       myChart.resize(

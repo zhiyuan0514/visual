@@ -1,6 +1,8 @@
 
 <template>
   <div class="circle">
+<Spin size="large" fix v-if="spinShow"></Spin>
+
     <Row class='content'>
       <Col span="6">
       <div
@@ -173,18 +175,18 @@
 </template>
 
 <script>
-import echarts from 'echarts';
+// import echarts from 'echarts';
 import $ from 'jquery';
 //
-import areaChart from './components/mobileMaket/areaChart.vue'
-import radarChart from './components/mobileMaket/radarChart.vue'
-import barChart from './components/mobileMaket/barChart.vue'
-import doubleBarChart from './components/mobileMaket/doubleBarChart.vue'
-import singleAreaChart from './components/mobileMaket/singleAreaChart.vue'
-import doubleLine from './components/mobileMaket/doubleLine.vue'
-import threeBarChart from './components/mobileMaket/threeBarChart.vue'
-import pieChart from './components/mobileMaket/pieChart.vue'
-import doubleBars from './components/mobileMaket/doubleBars.vue'
+// import areaChart from './components/mobileMaket/areaChart.vue'
+// import radarChart from './components/mobileMaket/radarChart.vue'
+// import barChart from './components/mobileMaket/barChart.vue'
+// import doubleBarChart from './components/mobileMaket/doubleBarChart.vue'
+// import singleAreaChart from './components/mobileMaket/singleAreaChart.vue'
+// import doubleLine from './components/mobileMaket/doubleLine.vue'
+// import threeBarChart from './components/mobileMaket/threeBarChart.vue'
+// import pieChart from './components/mobileMaket/pieChart.vue'
+// import doubleBars from './components/mobileMaket/doubleBars.vue'
 //
 import lineBar from './components/zhizhong/lineBar'
 import deliveryPie from './components/zhizhong/deliveryPie'
@@ -195,15 +197,15 @@ import chinaCaseMapLine from './components/zhizhong/chinaCaseMapLine';
 export default {
   components: {
     // 
-    areaChart,
-    radarChart,
-    barChart,
-    doubleBarChart,
-    singleAreaChart,
-    doubleLine,
-    threeBarChart,
-    pieChart,
-    doubleBars,
+    // areaChart,
+    // radarChart,
+    // barChart,
+    // doubleBarChart,
+    // singleAreaChart,
+    // doubleLine,
+    // threeBarChart,
+    // pieChart,
+    // doubleBars,
     // 
     lineBar,
     deliveryPie,
@@ -214,6 +216,7 @@ export default {
   },
   data() {
     return {
+      spinShow:true,
       moneySum: ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
       inintMoney: '1500940',
       sendMsgUpTimer: '',
@@ -311,6 +314,7 @@ export default {
       dots: []
     }
   },
+
   methods: {
     setMoneySum() {
       let moneyArr = this.inintMoney.split('');
@@ -689,7 +693,12 @@ export default {
 
     }
   },
+  created(){
+
+  },
   mounted() {
+
+    this.spinShow=false;
     this.setMoneySum();
     // 数字增加
     var timer = setInterval(() => {
@@ -750,6 +759,7 @@ export default {
         _this.$refs['chart' + i].setChart();
       }
     }
+
   }
 }
 </script>
@@ -771,6 +781,7 @@ export default {
   width: 100%;
   padding: 50px;
   background: #09102e;
+  position: relative;
   .header {
     text-align: center;
     height: 54px;

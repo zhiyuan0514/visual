@@ -183,7 +183,7 @@ export default {
           }
         ]
       };
-      let myChart = this.$echarts.init(document.getElementById(this.id));
+      let myChart = echarts.init(document.getElementById(this.id));
       myChart.clear();
       myChart.resize(
         {
